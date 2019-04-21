@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"bacgr",
+				"background-color"
+			],
+			[
 				"border-r",
 				"border-radius"
 			],
@@ -223,7 +227,7 @@
 			"file": "clickthedot.html",
 			"settings":
 			{
-				"buffer_size": 199,
+				"buffer_size": 233,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "<html>"
@@ -233,17 +237,14 @@
 			"file": "clickthedot.css",
 			"settings":
 			{
-				"buffer_size": 122,
+				"buffer_size": 148,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "body{"
 			}
 		},
 		{
-			"contents": "let dotDiv = document.createElement('div');\ndotDiv.className = 'dot';\ndocument.body.appendChild(dotDiv);",
 			"file": "clickthedot.js",
-			"file_size": 104,
-			"file_write_time": 132002436195284459,
 			"settings":
 			{
 				"buffer_size": 104,
@@ -311,6 +312,8 @@
 	],
 	"file_history":
 	[
+		"/home/paranoidangel/Projects/Shut The Box/index.html",
+		"/home/paranoidangel/Projects/DOM/access.html",
 		"/home/paranoidangel/Projects/Tribute/tribute.html",
 		"/home/paranoidangel/Projects/Click the Dot/clickthedot.html",
 		"/home/paranoidangel/Projects/freeCodeCamp/roman-numeral-converter.json",
@@ -324,7 +327,6 @@
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/hero.service.ts",
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/heroes/heroes.component.ts",
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/messages/messages.component.css",
-		"/home/paranoidangel/Projects/Shut The Box/index.html",
 		"/home/paranoidangel/Projects/Shut The Box/shutthebox.js",
 		"/home/paranoidangel/Projects/Shut The Box/index",
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/messages/messages.component.ts",
@@ -378,7 +380,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -387,15 +389,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 199,
+						"buffer_size": 233,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								119,
-								119
+								132,
+								132
 							]
 						],
 						"settings":
@@ -422,15 +424,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 122,
+						"buffer_size": 148,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								115,
-								115
+								146,
+								146
 							]
 						],
 						"settings":
@@ -442,7 +444,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -458,7 +460,7 @@
 						"selection":
 						[
 							[
-								104,
+								0,
 								104
 							]
 						],
@@ -479,7 +481,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

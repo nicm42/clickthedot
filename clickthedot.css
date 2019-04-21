@@ -9,3 +9,15 @@ body{
 	border: 1px solid black;
 	background-color: black;
 }
+
+.grow{
+	animation-name: growing;
+	animation-duration: 5s;
+}
+
+@keyframes growing{
+	from {width: 100px;}
+	to {width: 300px;}
+	from {height: 100px;}
+	to {height: 300px;}
+}
