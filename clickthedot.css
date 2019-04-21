@@ -1,7 +1,17 @@
+/* basic set up */
 body{
 	background-color: #ffe6cc;
+	height: 100%;
 }
-
+button{
+	margin: 0 auto;
+}
+#container{
+	height: 80vh; /* leave space for instructions and start button */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .dot{
 	width: 100px;
 	height: 100px;
@@ -10,6 +20,7 @@ body{
 	background-color: black;
 }
 
+/* making dot grow */
 .grow{
 	animation-name: growing;
 	animation-duration: 5s;
