@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"resul",
+				"resultTextStart"
+			],
+			[
+				"sta",
+				"startWidth"
+			],
+			[
+				"width",
+				"widthWhenClicked"
+			],
+			[
+				"dot",
+				"dotDiv"
+			],
+			[
+				"alg",
+				"align-items"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"start",
+				"startBtn"
+			],
+			[
+				"st",
+				"startBtn"
+			],
+			[
+				"ani",
+				"animation-duration"
+			],
+			[
+				"animation",
+				"animation-name"
+			],
+			[
 				"bacgr",
 				"background-color"
 			],
@@ -227,7 +267,7 @@
 			"file": "clickthedot.html",
 			"settings":
 			{
-				"buffer_size": 233,
+				"buffer_size": 444,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "<html>"
@@ -237,7 +277,7 @@
 			"file": "clickthedot.css",
 			"settings":
 			{
-				"buffer_size": 148,
+				"buffer_size": 596,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "body{"
@@ -247,7 +287,7 @@
 			"file": "clickthedot.js",
 			"settings":
 			{
-				"buffer_size": 104,
+				"buffer_size": 1481,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "//js file"
@@ -380,7 +420,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -389,15 +429,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 233,
+						"buffer_size": 444,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								132,
-								132
+								328,
+								328
 							]
 						],
 						"settings":
@@ -424,15 +464,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 148,
+						"buffer_size": 596,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								146,
-								146
+								405,
+								405
 							]
 						],
 						"settings":
@@ -444,7 +484,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -453,15 +493,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 104,
+						"buffer_size": 1481,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								104
+								215,
+								215
 							]
 						],
 						"settings":
@@ -481,7 +521,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

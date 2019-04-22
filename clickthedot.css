@@ -2,9 +2,8 @@
 body{
 	background-color: #ffe6cc;
 	height: 100%;
-}
-button{
-	margin: 0 auto;
+	text-align: center;
+	font-family: 'Sunflower', sans-serif;
 }
 #container{
 	height: 80vh; /* leave space for instructions and start button */
@@ -18,6 +17,7 @@ button{
 	border-radius: 50%;
 	border: 1px solid black;
 	background-color: black;
+	cursor: pointer;
 }
 
 /* making dot grow */
