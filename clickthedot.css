@@ -10,6 +10,8 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 300px; /* biggest dot when 3 times the size */
+	margin-top: 10px;
 }
 .dot{
 	/*width: 100px;
@@ -20,21 +22,11 @@ body{
 	cursor: pointer;
 }
 .transition{
-	transition: width 5s, height 5s;	
-}
-.noTransition{
-	transition-property: none !important;
+	transition: width 5s, height 5s;
+	transition-timing-function: linear;	
 }
 
-/* making dot grow */
-.grow{
-	animation-name: growing;
-	animation-duration: 5s;
-}
-
-@keyframes growing{
-	from {width: 100px;}
-	to {width: 300px;}
-	from {height: 100px;}
-	to {height: 300px;}
+/* hide reset button until transition has finished */
+#reset{
+	visibility: hidden;
 }
