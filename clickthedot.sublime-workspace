@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"reset",
+				"resetButton"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"stop",
+				"stopDot"
+			],
+			[
 				"widh",
 				"widthNumber"
 			],
@@ -279,7 +291,7 @@
 			"file": "clickthedot.html",
 			"settings":
 			{
-				"buffer_size": 444,
+				"buffer_size": 489,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "<html>"
@@ -289,7 +301,7 @@
 			"file": "clickthedot.css",
 			"settings":
 			{
-				"buffer_size": 706,
+				"buffer_size": 656,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "body{"
@@ -299,7 +311,7 @@
 			"file": "clickthedot.js",
 			"settings":
 			{
-				"buffer_size": 2681,
+				"buffer_size": 3007,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "//js file"
@@ -442,15 +454,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 444,
+						"buffer_size": 489,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								328,
-								328
+								337,
+								337
 							]
 						],
 						"settings":
@@ -477,15 +489,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 706,
+						"buffer_size": 656,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								455,
-								455
+								572,
+								572
 							]
 						],
 						"settings":
@@ -494,7 +506,7 @@
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 66.0,
+						"translation.y": 21.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -506,7 +518,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2681,
+						"buffer_size": 3007,
 						"regions":
 						{
 						},
