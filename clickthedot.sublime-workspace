@@ -4,6 +4,74 @@
 		"selected_items":
 		[
 			[
+				"reset",
+				"resetButton"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"stop",
+				"stopDot"
+			],
+			[
+				"widh",
+				"widthNumber"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"resul",
+				"resultTextStart"
+			],
+			[
+				"sta",
+				"startWidth"
+			],
+			[
+				"width",
+				"widthWhenClicked"
+			],
+			[
+				"dot",
+				"dotDiv"
+			],
+			[
+				"alg",
+				"align-items"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"start",
+				"startBtn"
+			],
+			[
+				"st",
+				"startBtn"
+			],
+			[
+				"ani",
+				"animation-duration"
+			],
+			[
+				"animation",
+				"animation-name"
+			],
+			[
+				"bacgr",
+				"background-color"
+			],
+			[
 				"border-r",
 				"border-radius"
 			],
@@ -223,7 +291,7 @@
 			"file": "clickthedot.html",
 			"settings":
 			{
-				"buffer_size": 199,
+				"buffer_size": 489,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "<html>"
@@ -233,20 +301,17 @@
 			"file": "clickthedot.css",
 			"settings":
 			{
-				"buffer_size": 122,
+				"buffer_size": 656,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "body{"
 			}
 		},
 		{
-			"contents": "let dotDiv = document.createElement('div');\ndotDiv.className = 'dot';\ndocument.body.appendChild(dotDiv);",
 			"file": "clickthedot.js",
-			"file_size": 104,
-			"file_write_time": 132002436195284459,
 			"settings":
 			{
-				"buffer_size": 104,
+				"buffer_size": 3007,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "//js file"
@@ -311,6 +376,8 @@
 	],
 	"file_history":
 	[
+		"/home/paranoidangel/Projects/Shut The Box/index.html",
+		"/home/paranoidangel/Projects/DOM/access.html",
 		"/home/paranoidangel/Projects/Tribute/tribute.html",
 		"/home/paranoidangel/Projects/Click the Dot/clickthedot.html",
 		"/home/paranoidangel/Projects/freeCodeCamp/roman-numeral-converter.json",
@@ -324,7 +391,6 @@
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/hero.service.ts",
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/heroes/heroes.component.ts",
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/messages/messages.component.css",
-		"/home/paranoidangel/Projects/Shut The Box/index.html",
 		"/home/paranoidangel/Projects/Shut The Box/shutthebox.js",
 		"/home/paranoidangel/Projects/Shut The Box/index",
 		"/home/paranoidangel/Projects/Angular/angular-tour-of-heroes/src/app/messages/messages.component.ts",
@@ -344,7 +410,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -358,6 +424,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"widthwhen",
 			"gradient",
 			"span"
 		],
@@ -387,15 +454,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 199,
+						"buffer_size": 489,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								119,
-								119
+								337,
+								337
 							]
 						],
 						"settings":
@@ -413,7 +480,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -422,15 +489,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 122,
+						"buffer_size": 656,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								115,
-								115
+								572,
+								572
 							]
 						],
 						"settings":
@@ -439,10 +506,10 @@
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 21.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -451,15 +518,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 104,
+						"buffer_size": 3007,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								104,
-								104
+								8,
+								8
 							]
 						],
 						"settings":
