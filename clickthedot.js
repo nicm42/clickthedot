@@ -72,7 +72,7 @@ function stopDot(event){
 	if(ratio == 2.0){
 		resultTextStart = "Well done!";
 	}
-	result.innerHTML = `${resultTextStart}  The dot is now  ${ratio} times its original size`;
+	result.innerHTML = `${resultTextStart}<br>The dot is now  ${ratio} times its original size`;
 	//show reset button
 	resetButton.style.visibility = 'visible';
 	//now stop this event, otherwise it'll fire twice for every click
