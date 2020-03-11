@@ -17,7 +17,7 @@ let initialSize = setUpDot();
 
 resetButton.addEventListener('click', resetDot);
 
-function setUpDot() {
+function setUpDot(){
 	let size = getRandomIntInclusive(50, 100);
 	dotDiv.style.width = size + 'px';
 	dotDiv.style.height = size + 'px';
@@ -31,20 +31,20 @@ function setUpDot() {
 	return size;
 }
 
-function growDot() {
+function growDot(){
 	dotDiv.classList.add('transition');
 	//set up the transition limit - 3 times the size should be enough
 	let size3 = initialSize * 3;
 	dotDiv.style.width = size3 + 'px';
 	dotDiv.style.height = size3 + 'px';
 	//add the transition time
-	let transitionTime = getRandomIntInclusive(2, 7);
-	dotDiv.style.transitionDuration = transitionTime + "s";
+	let transitionTime = getRandomIntInclusive(2, 7)
+	dotDiv.style.transitionDuration = transitionTime+"s";
 	//When the user clicks the dot again, stop it growing
 	dotDiv.addEventListener('click', stopDot, false);
 }
 
-function stopDot(event) {
+function stopDot(event){
 	//get the width and height now and set it to be that, so it appears to be paused,
 	//otherwise it skips to end of transition
 	let computedStyle = window.getComputedStyle(dotDiv);
@@ -62,14 +62,14 @@ function stopDot(event) {
 	//Add text saying this to the page
 	//widthWhenClicked = heightWhenClicked so we can just use one
 	//however it's a number + px, so we need to strip off the px part
-	let widthNumber = widthWhenClicked.substring(0, widthWhenClicked.length - 2);
+	let widthNumber = widthWhenClicked.substring(0,widthWhenClicked.length-2);
 	let ratio = (widthNumber / initialSize).toFixed(1);
 	//Text will depend on how close to 2.0 ratio is
 	let resultTextStart = "Missed!";
-	if (ratio == 1.9 || ratio == 2.1) {
+	if(ratio == 1.9 || ratio == 2.1){
 		resultTextStart = "Close!";
 	}
-	if (ratio == 2.0) {
+	if(ratio == 2.0){
 		resultTextStart = "Well done!";
 	}
 	result.innerHTML = `${resultTextStart}<br>The dot is now  ${ratio} times its original size`;
@@ -83,7 +83,7 @@ function stopDot(event) {
 	dotDiv.style.cursor = "auto";
 }
 
-function resetDot() {
+function resetDot(){
 	//remove the text in result, hide the rest button
 	result.innerHTML = "&nbsp;";
 	resetButton.style.visibility = 'hidden';
@@ -95,7 +95,7 @@ function resetDot() {
 
 //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomIntInclusive(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1)) + min;
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
