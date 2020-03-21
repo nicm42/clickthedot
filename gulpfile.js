@@ -13,7 +13,7 @@ const babel = require('gulp-babel');
 
 // File paths
 const files = { 
-    scssPath: 'src/*.scss',
+    scssPath: 'src/*.css',
     jsPath: 'src/*.js'
 }
 
@@ -21,7 +21,7 @@ const files = {
 function scssTask(){    
     return src(files.scssPath)
         .pipe(sourcemaps.init()) // initialize sourcemaps first
-        .pipe(sass()) // compile SCSS to CSS
+        //.pipe(sass()) // compile SCSS to CSS
         .pipe(postcss([ autoprefixer({ grid: 'autoplace' }), cssnano() ])) // PostCSS plugins
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
         .pipe(dest('./')
