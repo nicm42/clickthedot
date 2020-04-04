@@ -2,6 +2,8 @@
 
 /* variables */
 $shapeColour: #ff7a8a;
+//According to specs should use scale-color instead, but gulp-sass doesn't like it
+$buttonColour: lighten(#113a5d, 20%);
 
 /* basic set up */
 body {
@@ -63,16 +65,16 @@ body {
 #reset{
 	visibility: hidden;
 	cursor: pointer;
-	background-color: #5dade2;
-	border: #4e9af1;
-	color: #ffffff;
+	background-color: $buttonColour;
+	border: $buttonColour;
+	color: #f9f9f9;
 	padding: 0.5em 1.5em;
 	border-radius: 2em;
 	font-size: 0.9em;
 }
 #reset:hover{
-	background-color: #3498db;
+	background-color: darken($buttonColour, 10%);
 }
 #reset:active{
-	background-color: #3498db;
+	background-color: darken($buttonColour, 10%);
 }
