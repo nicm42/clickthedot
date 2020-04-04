@@ -6,6 +6,8 @@ function clickthedot() {
 }
 
 function createShape() {
+  //In case we've done one shape and changed to another, delete the text in result
+  $('#result').html('');
   $('.shape').attr('id', $(this).val());
   $('#shapename').text($(this).val());
   var size = getRandomIntInclusive(50, 100); //Reset all the properties that we're changing on each shape
@@ -19,7 +21,6 @@ function createShape() {
   });
 
   if ($(this).val() === 'circle' || $(this).val() === 'square') {
-    console.log($(this).val());
     $('.shape').css({
       'width': size,
       'height': size
@@ -27,7 +28,6 @@ function createShape() {
   }
 
   if ($(this).val() === 'triangle') {
-    console.log($(this).val());
     $('.shape').css({
       'border-left-width': size / 2,
       'border-right-width': size / 2,
@@ -36,12 +36,13 @@ function createShape() {
   }
 
   $('.shape').css('cursor', 'pointer');
-  $('.shape').one('click', function (event) {
+  $('.shape').on('click', function (event) {
     growShape(event.target.id, size);
   });
 }
 
 function growShape(shape, size) {
+  $('.shape').off();
   var transitionTime = getRandomIntInclusive(2, 7);
 
   if (shape === 'circle' || shape === 'square') {
@@ -62,9 +63,17 @@ function growShape(shape, size) {
       stopShape(shape, size);
     });
   }
+
+  $('.shape').on('click', function () {
+    $('.shape').stop(true);
+    $('.shape').off();
+    stopShape(shape, size);
+  });
 }
 
 function stopShape(shape, initialSize) {
+  $('.shape').off();
+  $('.shape').css('cursor', 'auto');
   var finalSize;
 
   if (shape === 'circle' || shape === 'square') {
@@ -86,8 +95,7 @@ function stopShape(shape, initialSize) {
     resultTextStart = "Well done!";
   }
 
-  console.log(initialSize, finalSize);
-  $('#result').html(resultTextStart + '<br>The dot is now ' + ratio + ' times its original size');
+  $('#result').html(resultTextStart + '<br>The ' + shape + ' is now ' + ratio + ' times its original size');
 } //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 
