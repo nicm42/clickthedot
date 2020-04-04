@@ -5,6 +5,7 @@ function clickthedot() {
 
 function createShape() {
   $('.shape').attr('id',$(this).val());
+  $('#shapename').text($(this).val());
   var size = getRandomIntInclusive(50, 100);
   //Reset all the properties that we're changing on each shape
 	  $('.shape').css({
