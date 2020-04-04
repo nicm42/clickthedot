@@ -24,6 +24,7 @@ body {
 	align-items: center;
 	height: 300px; /* biggest dot when 3 times the size */
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .shape {
 	position: relative;
@@ -50,11 +51,6 @@ body {
 	border-bottom-style: solid;
   border-bottom-color: $shapeColour;
 	background-color: none;
-}
-
-.transition{
-	transition-property: width, height;
-	transition-timing-function: linear;	
 }
 
 .helperDot{
