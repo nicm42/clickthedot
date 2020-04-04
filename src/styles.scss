@@ -1,13 +1,14 @@
 /* Colour palette: https://colorhunt.co/palette/118591 */
 
 /* variables */
+$lightColour: #f9f9f9;
 $shapeColour: #ff7a8a;
 //According to specs should use scale-color instead, but gulp-sass doesn't like it
 $buttonColour: lighten(#113a5d, 20%);
 
 /* basic set up */
 body {
-	background-color: #f9f9f9;
+	background-color: $lightColour;
 	height: 100%;
 	text-align: center;
 	font-family: 'Sunflower', sans-serif;
@@ -32,7 +33,6 @@ body {
 	position: relative;
 }
 #circle {
-	border: 1px solid $shapeColour;
 	border-radius: 50%;
 	background-color: $shapeColour;
 }
@@ -54,11 +54,31 @@ body {
   border-bottom-color: $shapeColour;
 	background-color: none;
 }
-
-.helperDot{
-	border-radius: 50%;
-	border: 2px solid white;
+.helper{
+	display: none;
+	border-style: solid;
+	border-color: $lightColour;
 	position: absolute;
+}
+#helpercircle {
+	border: 2px solid $lightColour;
+	border-radius: 50%;
+}
+#helpersquare {
+	border: 2px solid $lightColour;
+	border-radius: 0;
+}
+#helpertriangle {
+	width: 0;
+	height: 0;
+	border: none;
+	border-radius: 0;
+	border-left-style: solid;
+  border-left-color: transparent;
+	border-right-style: solid;
+  border-right-color: transparent;
+	border-bottom-style: solid;
+  border-bottom-color: $lightColour;
 }
 
 /* hide reset button until transition has finished */
@@ -67,7 +87,7 @@ body {
 	cursor: pointer;
 	background-color: $buttonColour;
 	border: $buttonColour;
-	color: #f9f9f9;
+	color: $lightColour;
 	padding: 0.5em 1.5em;
 	border-radius: 2em;
 	font-size: 0.9em;

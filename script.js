@@ -1,5 +1,10 @@
 "use strict";
 
+/*
+TODO: if you run a shape, then change shapes, can't click on a shape
+			triangle doesn't grow evenly
+			helper triangle should just have a border
+*/
 function clickthedot() {
   $('#shapes').val('');
   $('#shapes').change(createShape);
@@ -9,6 +14,7 @@ function createShape() {
   //In case we've done one shape and changed to another, delete the text in result
   $('#result').html('');
   $('.shape').attr('id', $(this).val());
+  $('.helper').attr('id', 'helper' + $(this).val());
   $('#shapename').text($(this).val());
   var size = getRandomIntInclusive(50, 100); //Reset all the properties that we're changing on each shape
 
@@ -19,9 +25,18 @@ function createShape() {
     'border-right-width': 0,
     'border-bottom-width': 0
   });
+  $('.helper').css({
+    'width': 0,
+    'height': 0,
+    'border-width': '2px'
+  });
 
   if ($(this).val() === 'circle' || $(this).val() === 'square') {
     $('.shape').css({
+      'width': size,
+      'height': size
+    });
+    $('.helper').css({
       'width': size,
       'height': size
     });
@@ -33,6 +48,12 @@ function createShape() {
       'border-right-width': size / 2,
       'border-bottom-width': size
     });
+    $('.helper').css({
+      'border-left-width': size / 2,
+      'border-right-width': size / 2,
+      'border-bottom-width': size
+    }); //var border = size - 2;
+    //$("<style type='text/css'> #helpertriangle:after{width:0;height:0;border-left:" + border + "px solid transparent;border-right:" + border + "px solid transparent;border-bottom:" + border + "px solid #ff7a8a;position:absolute;content:'';top:" + size / 3 + "px;left:-" + size / 2 + "px;}</style>").appendTo("#helpertriangle");
   }
 
   $('.shape').css('cursor', 'pointer');
@@ -74,6 +95,7 @@ function growShape(shape, size) {
 function stopShape(shape, initialSize) {
   $('.shape').off();
   $('.shape').css('cursor', 'auto');
+  $('.helper').css('display', 'block');
   var finalSize;
 
   if (shape === 'circle' || shape === 'square') {
