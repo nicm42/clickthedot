@@ -2,7 +2,7 @@
 
 function clickthedot() {
   $('#shapes').val('');
-  $('#shapes').on('change', createShape);
+  $('#shapes').change(createShape);
 }
 
 function createShape() {
@@ -34,6 +34,31 @@ function createShape() {
     if ($(this).val() === 'star') {
       $("<style type='text/css'> #star:after{width:0;height:0;border-left:" + size / 2 + "px solid transparent;border-right:" + size / 2 + "px solid transparent;border-top:" + size + "px solid #ff7a8a;position:absolute;content:'';top:" + size / 3 + "px;left:-" + size / 2 + "px;}</style>").appendTo("#star");
     }
+  }
+
+  $('.shape').css('cursor', 'pointer');
+  $('.shape').click(function (event) {
+    growShape(event.target.id, size);
+  });
+}
+
+function growShape(shape, size) {
+  console.log(shape);
+  var transitionTime = getRandomIntInclusive(2, 7);
+
+  if (shape === 'circle' || shape === 'square') {
+    $('.shape').animate({
+      'width': size * 3,
+      'height': size * 3
+    }, transitionTime * 1000);
+  }
+
+  if (shape === 'star' || shape === 'triangle') {
+    $('.shape').animate({
+      'border-left-width': size / 2 * 3,
+      'border-right-width': size / 2 * 3,
+      'border-bottom-width': size * 3
+    }, transitionTime * 1000);
   }
 } //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
