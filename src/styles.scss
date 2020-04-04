@@ -1,9 +1,13 @@
+/* Colour palette: https://colorhunt.co/palette/118591 */
+
+
 /* basic set up */
 body{
-	background-color: #ffe6cc;
+	background-color: #f9f9f9;
 	height: 100%;
 	text-align: center;
 	font-family: 'Sunflower', sans-serif;
+	color: #062743;
 }
 #container{
 	height: 80vh; /* leave space for instructions and start button */
@@ -15,8 +19,8 @@ body{
 }
 .dot{
 	border-radius: 50%;
-	border: 1px solid black;
-	background-color: black;
+	border: 1px solid #ff7a8a;
+	background-color: #ff7a8a;
 	position: relative;
 }
 .transition{
