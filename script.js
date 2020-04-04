@@ -1,6 +1,7 @@
 "use strict";
 
 function clickthedot() {
+  $('#shapes').val('');
   $('#shapes').on('change', createShape);
 }
 
