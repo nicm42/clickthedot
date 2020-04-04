@@ -24,7 +24,6 @@ body {
 	margin-top: 10px;
 }
 .shape {
-	background-color: #ff7a8a;
 	position: relative;
 }
 #circle {
@@ -32,19 +31,24 @@ body {
 	height: 100px;
 	border: 1px solid #ff7a8a;
 	border-radius: 50%;
+	background-color: #ff7a8a;
 }
 #square {
 	width: 100px;
 	height: 100px;
-	border-radius: 0%;
+	border: none;
+	border-radius: 0;
+	background-color: #ff7a8a;
 }
  #star {
   width: 0;
   height: 0;
+	border: none;
+	border-radius: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   border-bottom: 100px solid #ff7a8a;
-  position: relative;
+	background-color: none;
 }
 #star:after {
 	width: 0;
@@ -61,10 +65,12 @@ body {
 #triangle {
 	width: 0;
 	height: 0;
-	border-radius: 50%;
+	border: none;
+	border-radius: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
 	border-bottom: 100px solid #ff7a8a;
+	background-color: none;
 }
 .transition{
 	transition-property: width, height;
