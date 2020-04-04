@@ -2,14 +2,20 @@
 
 
 /* basic set up */
-body{
+body {
 	background-color: #f9f9f9;
 	height: 100%;
 	text-align: center;
 	font-family: 'Sunflower', sans-serif;
+	font-size: 1em;
 	color: #062743;
 }
-#container{
+#shapes {
+	margin: 2rem 0;
+	padding: 2px;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+}
+#container {
 	height: 80vh; /* leave space for instructions and start button */
 	display: flex;
 	justify-content: center;
@@ -17,11 +23,48 @@ body{
 	height: 300px; /* biggest dot when 3 times the size */
 	margin-top: 10px;
 }
-.dot{
-	border-radius: 50%;
-	border: 1px solid #ff7a8a;
+.shape {
 	background-color: #ff7a8a;
 	position: relative;
+}
+#circle {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #ff7a8a;
+	border-radius: 50%;
+}
+#square {
+	width: 100px;
+	height: 100px;
+	border-radius: 0%;
+}
+ #star {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #ff7a8a;
+  position: relative;
+}
+#star:after {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid #ff7a8a;
+	position: absolute;
+	content: "";
+	top: 30px;
+	left: -50px;
+}
+
+#triangle {
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid #ff7a8a;
 }
 .transition{
 	transition-property: width, height;
