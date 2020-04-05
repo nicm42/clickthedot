@@ -1,24 +1,27 @@
 /*
-TODO: reset button
-			high scores
+TODO: high scores
 			layout
 */
 
-
 function clickthedot() {
 	$('#shapes').val('');
-	$('#shapes').change(createShape); 
+	$('#shapes').change(function() {
+	  $('.shape').attr('id',$(this).val());
+	  $('.helper').attr('id','helper'+$(this).val());
+  	$('#shapename').text($(this).val());
+		createShape();
+	});
+	$('#reset').click(createShape); 
 }
 
 function createShape() {
-	//In case we've done one shape and changed to another, delete the text in result and re-hide helper
+	var shape = $('.shape').attr('id');
+	//In case we've done one shape reset anything
 	$('#result').html('');
 	$('.helper').css('display','none');
 	//Remove helpertriangle2 in case it exists
 	$('#helpertriangle2').remove();
-  $('.shape').attr('id',$(this).val());
-  $('.helper').attr('id','helper'+$(this).val());
-  $('#shapename').text($(this).val());
+	$('#reset').css('visibility','hidden');	
   var size = getRandomIntInclusive(50, 100);
   //Reset all the properties that we're changing on each shape
   $('.shape').css({
@@ -33,7 +36,7 @@ function createShape() {
   	'height': 0,
   	'border-width': '2px',
   });
-  if ($(this).val() === 'circle' || $(this).val() === 'square') {
+  if (shape === 'circle' || shape === 'square') {
 	  $('.shape').css({
 	  	'width': size,
 	  	'height': size
@@ -43,7 +46,7 @@ function createShape() {
 	  	'height': size
 	  });  	
   } 
-  if ($(this).val() === 'triangle') {
+  if (shape === 'triangle') {
 	  $('.shape').css({
 	  	'border-left-width': size / 2,
 	  	'border-right-width': size / 2,
@@ -120,6 +123,7 @@ function stopShape(shape, initialSize) {
 		resultTextStart = "Well done!";
 	}
 	$('#result').html(resultTextStart + '<br>The ' + shape + ' is now ' + ratio + ' times its original size');
+	$('#reset').css('visibility','visible');
 }
 
 //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
