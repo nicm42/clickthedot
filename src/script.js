@@ -1,7 +1,5 @@
 /*
-TODO: if you run a shape, then change shapes, can't click on a shape
-			triangle doesn't grow evenly
-			helper triangle should just have a border
+TODO: if you run a shape, then change shapes, can't click on a shape - and doesn't re-hide helper
 */
 
 
@@ -50,7 +48,19 @@ function createShape() {
 	  	'border-left-width': size / 2,
 	  	'border-right-width': size / 2,
 	  	'border-bottom-width': size
-	  });
+	  })
+	  //Making a hollow triangle with dynamic width and height is hard
+	  //So instead we'll add another helper triangle, this time a bit smaller and shapeColour
+	  //so it'll look like we just have a triangle with a border
+	  //borders = 2 each
+	  $('<div class="helper" id="helpertriangle2"></div>').appendTo('#helpertriangle');
+	  $('#helpertriangle2').css({
+	  	'border-left-width': size / 2 - 4,
+	  	'border-right-width': size / 2 - 4,
+	  	'border-bottom-width': size - 4,
+	  	'left': (size / 2 - 4) * -1,
+	  	'top': 2
+	  })
 	  //var border = size - 2;
 	  //$("<style type='text/css'> #helpertriangle:after{width:0;height:0;border-left:" + border + "px solid transparent;border-right:" + border + "px solid transparent;border-bottom:" + border + "px solid #ff7a8a;position:absolute;content:'';top:" + size / 3 + "px;left:-" + size / 2 + "px;}</style>").appendTo("#helpertriangle");
   }

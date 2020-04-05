@@ -80,6 +80,18 @@ body {
 	border-bottom-style: solid;
   border-bottom-color: $lightColour;
 }
+#helpertriangle2 {
+	width: 0;
+	height: 0;
+	border: none;
+	border-radius: 0;
+	border-left-style: solid;
+  border-left-color: transparent;
+	border-right-style: solid;
+  border-right-color: transparent;
+	border-bottom-style: solid;
+  border-bottom-color: $shapeColour;
+}
 
 /* hide reset button until transition has finished */
 #reset{
