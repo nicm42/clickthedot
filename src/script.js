@@ -4,6 +4,10 @@ TODO: high scores
 */
 
 function clickthedot() {
+	//localStorage.clear();
+	setupHighScoreText('circle');
+	setupHighScoreText('square');
+	setupHighScoreText('triangle');
 	$('#shapes').val('');
 	$('#shapes').change(function() {
 	  $('.shape').attr('id',$(this).val());
@@ -12,6 +16,12 @@ function clickthedot() {
 		createShape();
 	});
 	$('#reset').click(createShape); 
+}
+
+function setupHighScoreText(shape) {
+	if(localStorage.getItem(shape)) {
+		$('#'+shape+'score').html(localStorage.getItem(shape));
+	}
 }
 
 function createShape() {
@@ -124,6 +134,21 @@ function stopShape(shape, initialSize) {
 	}
 	$('#result').html(resultTextStart + '<br>The ' + shape + ' is now ' + ratio + ' times its original size');
 	$('#reset').css('visibility','visible');
+	addHighScore(shape, ratio);
+}
+
+function addHighScore(shape, score) {
+	//First get the current high score for this shape
+	//Then check if this is closer to 2.0
+	//If it is, then add it to localStorage
+	var highScore = localStorage.getItem(shape);
+	if (highScore){
+		var highestScore = (Math.abs(score-2) < Math.abs(highScore-2)) ? score : highScore;
+	} else {
+		var highestScore = score;
+	}
+	localStorage.setItem(shape, highestScore);
+	$('#'+shape+'score').html(localStorage.getItem(shape));
 }
 
 //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
