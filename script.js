@@ -7,8 +7,8 @@ function clickthedot() {
   setupHighScoreText('triangle');
   $('#shapes').val('');
   $('#shapes').change(function () {
-    $('.shape').attr('id', $(this).val());
-    $('.helper').attr('id', 'helper' + $(this).val());
+    $('.shape').attr('id', $(this).val()); //$('.helper').attr('id','helper'+$(this).val());
+
     $('#shapename').text($(this).val());
     createShape();
   });
@@ -24,10 +24,11 @@ function setupHighScoreText(shape) {
 function createShape() {
   var shape = $('.shape').attr('id'); //In case we've done one shape reset anything
 
-  $('#result').html('');
-  $('.helper').css('display', 'none'); //Remove helpertriangle2 in case it exists
+  $('#result').html(''); //Remove and re-add helper as might have had two from triangle and now need only one for circle and square
 
-  $('#helpertriangle2').remove();
+  $('.helper').remove();
+  $('<div class="helper" id="helper' + shape + '"></div>').appendTo('#container');
+  $('.helper').css('display', 'none');
   $('#reset').css('visibility', 'hidden');
   var size = getRandomIntInclusive(50, 100); //Reset all the properties that we're changing on each shape
 

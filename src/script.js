@@ -6,7 +6,7 @@ function clickthedot() {
 	$('#shapes').val('');
 	$('#shapes').change(function() {
 	  $('.shape').attr('id',$(this).val());
-	  $('.helper').attr('id','helper'+$(this).val());
+	  //$('.helper').attr('id','helper'+$(this).val());
   	$('#shapename').text($(this).val());
 		createShape();
 	});
@@ -23,9 +23,10 @@ function createShape() {
 	var shape = $('.shape').attr('id');
 	//In case we've done one shape reset anything
 	$('#result').html('');
+	//Remove and re-add helper as might have had two from triangle and now need only one for circle and square
+	$('.helper').remove();
+	$('<div class="helper" id="helper'+shape+'"></div>').appendTo('#container');
 	$('.helper').css('display','none');
-	//Remove helpertriangle2 in case it exists
-	$('#helpertriangle2').remove();
 	$('#reset').css('visibility','hidden');	
   var size = getRandomIntInclusive(50, 100);
   //Reset all the properties that we're changing on each shape
