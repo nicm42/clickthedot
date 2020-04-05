@@ -1,25 +1,30 @@
 /* Colour palette: https://colorhunt.co/palette/118591 */
 
 /* variables */
-$lightColour: #f9f9f9;
-$shapeColour: #ff7a8a;
-//According to specs should use scale-color instead, but gulp-sass doesn't like it
-$buttonColour: lighten(#113a5d, 20%);
+$lightGrey: #f9f9f9;
+$pink: #ff7a8a;
+$lightBlue: lighten(#113a5d, 20%); //According to specs should use scale-color instead, but gulp-sass doesn't like it
+$darkBlue: #062743;
 
 /* basic set up */
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
-	background-color: $lightColour;
+	background-color: $lightGrey;
 	height: 100%;
 	text-align: center;
 	font-family: 'Sunflower', sans-serif;
 	font-size: 1em;
-	color: #062743;
+	color: $darkBlue;
 }
 
 #instructions {
 	grid-area: instructions;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	font-size: 1.3rem;
 }
 
 #options {
@@ -48,12 +53,12 @@ body {
 }
 #circle {
 	border-radius: 50%;
-	background-color: $shapeColour;
+	background-color: $pink;
 }
 #square {
 	border: none;
 	border-radius: 0;
-	background-color: $shapeColour;
+	background-color: $pink;
 }
 #triangle {
 	width: 0;
@@ -65,21 +70,21 @@ body {
 	border-right-style: solid;
   border-right-color: transparent;
 	border-bottom-style: solid;
-  border-bottom-color: $shapeColour;
+  border-bottom-color: $pink;
 	background-color: none;
 }
 .helper {
 	display: none;
 	border-style: solid;
-	border-color: $lightColour;
+	border-color: $lightGrey;
 	position: absolute;
 }
 #helpercircle {
-	border: 2px solid $lightColour;
+	border: 2px solid $lightGrey;
 	border-radius: 50%;
 }
 #helpersquare {
-	border: 2px solid $lightColour;
+	border: 2px solid $lightGrey;
 	border-radius: 0;
 }
 #helpertriangle {
@@ -92,7 +97,7 @@ body {
 	border-right-style: solid;
   border-right-color: transparent;
 	border-bottom-style: solid;
-  border-bottom-color: $lightColour;
+  border-bottom-color: $lightGrey;
 }
 #helpertriangle2 {
 	width: 0;
@@ -104,13 +109,14 @@ body {
 	border-right-style: solid;
   border-right-color: transparent;
 	border-bottom-style: solid;
-  border-bottom-color: $shapeColour;
+  border-bottom-color: $pink;
 }
 
 #result {
 	grid-area: result;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	font-weight: bold;
 }
 
 /* hide reset button until transition has finished */
@@ -122,24 +128,37 @@ body {
 #reset {
 	visibility: hidden;
 	cursor: pointer;
-	background-color: $buttonColour;
-	border: $buttonColour;
-	color: $lightColour;
+	background-color: $lightBlue;
+	border: $lightBlue;
+	color: $lightGrey;
 	padding: 0.5em 1.5em;
-	border-radius: 2em;
+	box-shadow: 0 5px 12px -5px rgba(0,0,0,.5);
+	border-radius: .2em;
 	font-size: 0.9em;
+	position: relative;
 }
 #reset:hover {
-	background-color: darken($buttonColour, 10%);
+	background-color: darken($lightBlue, 10%);
 }
 #reset:active {
-	background-color: darken($buttonColour, 10%);
+	background-color: darken($lightBlue, 10%);
+	top: 2px;
 }
 
 #highscores {
 	grid-area: highscores;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	color: $lightBlue;
+	display: flex;
+	flex-direction: column;;
+	align-items: center;
+	text-align: left;
+}
+ion-icon {
+	position: relative;
+	top: .2rem;
+	padding-right: .2rem
 }
 
 @media (min-width: 600px) {
