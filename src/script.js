@@ -1,8 +1,3 @@
-/*
-TODO: high scores
-			layout
-*/
-
 function clickthedot() {
 	//localStorage.clear();
 	setupHighScoreText('circle');

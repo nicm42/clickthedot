@@ -15,19 +15,33 @@ body {
 	font-size: 1em;
 	color: #062743;
 }
+
+#instructions {
+	grid-area: instructions;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#options {
+	grid-area: options;
+}
 #shapes {
 	margin: 2rem 0;
 	padding: 2px;
 	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
 }
+
 #container {
-	height: 80vh; /* leave space for instructions and start button */
+	grid-area: container;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 300px; /* biggest dot when 3 times the size */
+	min-width: 300px; /* biggest dot when 3 times the size */
 	margin-top: 10px;
 	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .shape {
 	position: relative;
@@ -54,7 +68,7 @@ body {
   border-bottom-color: $shapeColour;
 	background-color: none;
 }
-.helper{
+.helper {
 	display: none;
 	border-style: solid;
 	border-color: $lightColour;
@@ -93,8 +107,19 @@ body {
   border-bottom-color: $shapeColour;
 }
 
+#result {
+	grid-area: result;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 /* hide reset button until transition has finished */
-#reset{
+#resetbutton {
+	grid-area: reset;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#reset {
 	visibility: hidden;
 	cursor: pointer;
 	background-color: $buttonColour;
@@ -104,9 +129,45 @@ body {
 	border-radius: 2em;
 	font-size: 0.9em;
 }
-#reset:hover{
+#reset:hover {
 	background-color: darken($buttonColour, 10%);
 }
-#reset:active{
+#reset:active {
 	background-color: darken($buttonColour, 10%);
+}
+
+#highscores {
+	grid-area: highscores;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+	body {
+		display: grid;
+		grid-template-areas:
+											"instructions instructions"
+											"options container"
+											"highscores container"
+											"result result"
+											"reset reset";
+		grid-template-columns: 1fr, 2fr;
+	}
+	#highscores {
+		align-self: center;
+	}
+	#options {
+		align-self: center;
+	}
+}
+
+@media (min-width: 900px) {
+	body {
+		grid-template-areas:
+											". instructions ."
+											"options container highscores"
+											". result ."
+											". reset .";
+		grid-template-columns: 1fr, 2fr, 1fr;
+	}
 }
