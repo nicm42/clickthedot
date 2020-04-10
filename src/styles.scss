@@ -49,8 +49,9 @@ body {
 }
 .shape {
 	position: relative;
+	visibility: hidden;
 }
-#circle {
+/*#circle {
 	border-radius: 50%;
 	background-color: $pink;
 }
@@ -71,14 +72,14 @@ body {
 	border-bottom-style: solid;
   border-bottom-color: $pink;
 	background-color: none;
-}
+}*/
 .helper {
 	display: none;
-	border-style: solid;
-	border-color: $lightGrey;
+	/*border-style: solid;
+	border-color: $lightGrey;*/
 	position: absolute;
 }
-#helpercircle {
+/*#helpercircle {
 	border: 2px solid $lightGrey;
 	border-radius: 50%;
 }
@@ -109,7 +110,7 @@ body {
   border-right-color: transparent;
 	border-bottom-style: solid;
   border-bottom-color: $pink;
-}
+}*/
 
 #result {
 	grid-area: result;
