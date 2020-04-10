@@ -5,10 +5,11 @@ function clickthedot() {
 	setupHighScoreText('triangle');
 	$('#shapes').val('');
 	$('#shapes').change(function() {
-	  $('.shape').attr('id',$(this).val());
-	  //$('.helper').attr('id','helper'+$(this).val());
+		//Hide all the other shapes first, in case they were previously visible
+		$('.shape').css('visibility','hidden');
+	  $('#'+$(this).val()).css('visibility','visible');
   	$('#shapename').text($(this).val());
-		createShape();
+		createShape($(this).val());
 	});
 	$('#reset').click(createShape); 
 }
@@ -19,62 +20,29 @@ function setupHighScoreText(shape) {
 	}
 }
 
-function createShape() {
-	var shape = $('.shape').attr('id');
+function createShape(shape) {
 	//In case we've done one shape reset anything
 	$('#result').html('');
-	//Remove and re-add helper as might have had two from triangle and now need only one for circle and square
-	$('.helper').remove();
-	$('<div class="helper" id="helper'+shape+'"></div>').appendTo('#container');
-	$('.helper').css('display','none');
+	//Hide all the helpers in case they were previously visible
+	$('.helper').css('visibility','hidden');
 	$('#reset').css('visibility','hidden');	
   var size = getRandomIntInclusive(50, 100);
-  //Reset all the properties that we're changing on each shape
-  $('.shape').css({
-  	'width': 0,
-  	'height': 0,
-  	'border-left-width': 0,
-  	'border-right-width': 0,
-  	'border-bottom-width': 0
-  });
-  $('.helper').css({
-  	'width': 0,
-  	'height': 0,
-  	'border-width': '2px',
-  });
-  if (shape === 'circle' || shape === 'square') {
-	  $('.shape').css({
-	  	'width': size,
-	  	'height': size
-	  });  	
-	  $('.helper').css({
-	  	'width': size,
-	  	'height': size
-	  });  	
-  } 
-  if (shape === 'triangle') {
-	  $('.shape').css({
-	  	'border-left-width': size / 2,
-	  	'border-right-width': size / 2,
-	  	'border-bottom-width': size
-	  });
-	  $('.helper').css({
-	  	'border-left-width': size / 2,
-	  	'border-right-width': size / 2,
-	  	'border-bottom-width': size
-	  })
-	  //Making a hollow triangle with dynamic width and height is hard
-	  //So instead we'll add another helper triangle, this time a bit smaller and shapeColour
-	  //so it'll look like we just have a triangle with a border
-	  //borders = 2 each
-	  $('<div class="helper" id="helpertriangle2"></div>').appendTo('#helpertriangle');
-	  $('#helpertriangle2').css({
-	  	'border-left-width': size / 2 - 4,
-	  	'border-right-width': size / 2 - 4,
-	  	'border-bottom-width': size - 4,
-	  	'left': (size / 2 - 4) * -1,
-	  	'top': 2
-	  })
+  //Make both the shape and the helper this size
+  if(shape === 'square') {
+  	$('.shape').attr('width',size);
+  	$('.shape').attr('height',size);
+  	$('.helper').attr('width',size);
+  	$('.helper').attr('height',size);
+  }
+  if(shape === 'circle') {
+  	$('.shape').attr('r',size/2);
+  	$('.helper').attr('r',size/2);
+  }
+  if(shape === 'triangle') {
+  	var points = [size/2, 0, size, size, 0, size].toString('');
+  	console.log(points);
+  	$('.shape').attr('points',points);
+  	$('.helper').attr('points',points);
   }
   $('.shape').css('cursor','pointer'); 
   $('.shape').on('click', function(event) {

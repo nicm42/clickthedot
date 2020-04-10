@@ -50,6 +50,8 @@ body {
 .shape {
 	position: relative;
 	visibility: hidden;
+	stroke: none;
+	fill: $pink;
 }
 /*#circle {
 	border-radius: 50%;
@@ -78,6 +80,8 @@ body {
 	/*border-style: solid;
 	border-color: $lightGrey;*/
 	position: absolute;
+	stroke: $darkBlue;
+	fill: none;
 }
 /*#helpercircle {
 	border: 2px solid $lightGrey;
