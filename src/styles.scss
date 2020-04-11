@@ -75,13 +75,14 @@ body {
   border-bottom-color: $pink;
 	background-color: none;
 }*/
-.helper {
+.helpersvg {
 	display: none;
+	position: absolute;
+}
+.helper {
 	/*border-style: solid;
 	border-color: $lightGrey;*/
-	position: absolute;
-	stroke: $darkBlue;
-	fill: none;
+	fill: $darkBlue;
 }
 /*#helpercircle {
 	border: 2px solid $lightGrey;
