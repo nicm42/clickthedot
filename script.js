@@ -25,36 +25,24 @@ function setupHighScoreText(shape) {
 function createShape(shape) {
   //In case we've done one shape reset anything
   $('#result').html(''); //Hide all the helpers in case they were previously visible
-  //$('.helper').css('visibility','hidden');
 
+  $('.helpersvg').css('display', 'none');
+  $('.helper').css('visibility', 'hidden');
   $('#reset').css('visibility', 'hidden');
   var size = getRandomIntInclusive(50, 100); //Make both the shape and the helper this size
-  //if(shape === 'square') {
 
-  $('.svg').attr('width', size);
-  $('.svg').attr('height', size);
-  $('.helpersvg').attr('width', size);
-  $('.helpersvg').attr('height', size); //}
-
-  /*if(shape === 'circle') {
-   	$('.shape').attr('r',size/2);
-  	$('.helper').attr('r',size/2);
-  }
-  if(shape === 'triangle') {
-  	var points = [size/2, 0, size, size, 0, size].toString('');
-  	console.log(points);
-  	$('.shape').attr('points',points);
-  	$('.helper').attr('points',points);
-  }*/
-
-  $('.shape').css('cursor', 'pointer');
-  $('.shape').on('click', function (event) {
+  $('.svg').css('width', size);
+  $('.svg').css('height', size);
+  $('.helpersvg').css('width', size);
+  $('.helpersvg').css('height', size);
+  $('.svg').css('cursor', 'pointer');
+  $('.svg').on('click', function (event) {
     growShape(event.target.id, size);
   });
 }
 
 function growShape(shape, size) {
-  $('.shape').off();
+  $('.svg').off();
   var transitionTime = getRandomIntInclusive(2, 7);
   $('.svg').animate({
     'width': size * 3,
@@ -62,16 +50,17 @@ function growShape(shape, size) {
   }, transitionTime * 1000, function () {
     stopShape(shape, size);
   });
-  $('.shape').on('click', function (event) {
+  $('.svg').on('click', function (event) {
     $('.svg').stop();
     stopShape(shape, size);
   });
 }
 
 function stopShape(shape, initialSize) {
-  $('.shape').off();
-  $('.shape').css('cursor', 'auto');
+  $('.svg').off();
+  $('.svg').css('cursor', 'auto');
   $('.helpersvg').css('display', 'block');
+  $('#helper' + shape).css('visibility', 'visible');
   var finalSize = $('.svg').width(); //width and height are the same, so we can just use width
 
   var ratio = (finalSize / initialSize).toFixed(1);
