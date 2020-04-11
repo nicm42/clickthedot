@@ -30,11 +30,26 @@ body {
 #options {
 	grid-area: options;
 }
-#shapes {
+/* https://www.filamentgroup.com/lab/select-css.html */
+#select-shapes {
 	padding: .2rem;
+	padding-right: 1.6rem; //make sure there's space for the dropdown arrow
 	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	font-family: 'Sunflower', sans-serif;
+	font-size: 1rem;
+	border-radius: .2em;
+	background-color: $lightGrey;
+	color: $darkBlue;
+	background: url('chevron-down-outline.svg');
+	background-size: 1.5rem 1.5rem;
+	background-position: right center;
+	background-repeat: no-repeat;
+	appearance: none; //hides native dropdown arrow so we don't get both
 }
-
+//So it hides the dropdown arrow in IE
+#select-shapes::-ms-expand {
+	display: none;
+}
 #container {
 	grid-area: container;
 	display: flex;

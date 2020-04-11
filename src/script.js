@@ -3,8 +3,8 @@ function clickthedot() {
 	setupHighScoreText('circle');
 	setupHighScoreText('square');
 	setupHighScoreText('triangle');
-	$('#shapes').val('');
-	$('#shapes').change(function() {
+	$('#select-shapes').val('');
+	$('#select-shapes').change(function() {
 		//Hide all the other shapes first, in case they were previously visible
 		$('.shape').css('visibility','hidden');
 	  $('#'+$(this).val()).css('visibility','visible');
