@@ -92,6 +92,7 @@ function stopShape(shape, initialSize) {
 
   if (ratio == 2.0) {
     resultTextStart = "Well done!";
+    addConfetti();
   }
 
   $('.result-text').html(resultTextStart + '<br>The ' + shape + ' is now ' + ratio + ' times its original size');
@@ -131,4 +132,11 @@ function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function addConfetti() {
+  $('.confetti-container').css('display', 'block');
+  setTimeout(function () {
+    $('.confetti-container').fadeOut();
+  }, 5000);
 }
