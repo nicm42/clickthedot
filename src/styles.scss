@@ -1,166 +1,62 @@
-/* Colour palette: https://colorhunt.co/palette/118591 */
+@charset 'utf-8';
 
-/* variables */
+/* 
+	variables 
+*/
+$breakpoint-medium: 600px;
+$breakpoint-big: 900px;
+
+$fonts: ('Sunflower', sans-serif);
+$normal-text: 1em;
+$big-text: 1.3rem;
+$small-text: 0.9rem;
+$smaller-text: 0.8rem;
+
+/* Colour palette: https://colorhunt.co/palette/118591 */
 $lightGrey: #f9f9f9;
 $pink: #ff7a8a;
 $lightBlue: lighten(#113a5d, 20%); //According to specs should use scale-color instead, but gulp-sass doesn't like it
 $darkBlue: #062743;
 
-/* basic set up */
+$primary-colour: $darkBlue;
+$secondary-colour: $lightBlue;
+$standout-colour: $pink;
+$background-colour: $lightGrey;
+
+/*
+	mixins
+*/
+@mixin button {
+	box-shadow: 0 5px 12px -5px rgba(0,0,0,.5);
+	border-radius: 0.2em;
+	cursor: pointer;	
+}
+@mixin top-bottom-padding($amount) {
+	padding-top: $amount;
+	padding-bottom: $amount;
+}
+@mixin set-text {
+	font-family: $fonts;
+	font-size: $normal-text;
+	color: $primary-colour;
+
+}
+
+/*
+	basic set up
+*/
 * {
   padding: 0;
   margin: 0;
 }
+
 body {
-	background-color: $lightGrey;
 	height: 100%;
+	@include set-text;
 	text-align: center;
-	font-family: 'Sunflower', sans-serif;
-	font-size: 1em;
-	color: $darkBlue;
-}
+	background-color: $background-colour;
 
-#instructions {
-	grid-area: instructions;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 1.3rem;
-}
-
-#options {
-	grid-area: options;
-}
-/* https://www.filamentgroup.com/lab/select-css.html */
-#select-shapes {
-	padding: .2rem;
-	padding-right: 1.6rem; //make sure there's space for the dropdown arrow
-	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-	font-family: 'Sunflower', sans-serif;
-	font-size: 1rem;
-	border: 1px solid $darkBlue;
-	border-radius: .2em;
-	background-color: $lightGrey;
-	color: $darkBlue;
-	background: url('chevron-down-outline.svg');
-	background-size: 1.5rem 1.5rem;
-	background-position: right center;
-	background-repeat: no-repeat;
-	appearance: none; //hides native dropdown arrow so we don't get both
-}
-//So it hides the dropdown arrow in IE
-#select-shapes::-ms-expand {
-	display: none;
-}
-#container {
-	grid-area: container;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 300px; /* biggest dot when 3 times the size */
-	min-width: 300px; /* biggest dot when 3 times the size */
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-.shape {
-	position: relative;
-	visibility: hidden;
-	stroke: none;
-	fill: $pink;
-}
-.helpersvg {
-	display: none;
-	position: absolute;
-}
-.helper {
-	visibility: hidden;
-	fill: $darkBlue;
-}
-
-#result {
-	grid-area: result;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-weight: bold;
-}
-
-/* hide reset button until transition has finished */
-#resetbutton {
-	grid-area: reset;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-#reset {
-	visibility: hidden;
-	cursor: pointer;
-	background-color: $lightBlue;
-	border: $lightBlue;
-	color: $lightGrey;
-	padding: 0.5em 1.5em;
-	box-shadow: 0 5px 12px -5px rgba(0,0,0,.5);
-	border-radius: .2em;
-	font-size: 0.9em;
-	position: relative;
-}
-#reset:hover {
-	background-color: darken($lightBlue, 10%);
-}
-#reset:active {
-	background-color: darken($lightBlue, 10%);
-	top: 2px;
-}
-
-#scores {
-	padding-top: .5rem;
-}
-#highscores {
-	grid-area: highscores;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: $lightBlue;
-	display: flex;
-	flex-direction: column;;
-	align-items: center;
-	text-align: left;
-}
-.highscore {
-	padding-top: .2rem;
-	padding-bottom: .2rem;
-}
-.highscoreicon {
-	padding-right: .2rem;
-	fill: $lightBlue;
-}
-#clearbutton {
-	padding-top: .5rem;
-}
-#clear {
-	cursor: pointer;
-	background-color: $lightGrey;
-	border: $lightGrey;
-	color: $darkBlue;
-	padding: 0.5em 1em;
-	box-shadow: 0 5px 12px -5px rgba(0,0,0,.5);
-	border-radius: .2em;
-	font-size: 0.8rem;
-	position: relative;
-}
-#clear:hover {
-	background-color: darken($lightGrey, 10%);
-}
-#clear:active {
-	background-color: darken($lightGrey, 10%);
-	top: 2px;
-}
-#clear:disabled {
-	cursor: auto;
-	pointer-events: none;
-	opacity: .5;
-}
-
-@media (min-width: 600px) {
-	body {
+	@media (min-width: $breakpoint-medium) {
 		display: grid;
 		grid-template-areas:
 											"instructions instructions"
@@ -170,16 +66,8 @@ body {
 											"reset reset";
 		grid-template-columns: 1fr, 2fr;
 	}
-	#highscores {
-		align-self: center;
-	}
-	#options {
-		align-self: center;
-	}
-}
 
-@media (min-width: 900px) {
-	body {
+	@media (min-width: $breakpoint-big) {
 		grid-template-areas:
 											". instructions ."
 											"options container highscores"
@@ -187,4 +75,164 @@ body {
 											". reset .";
 		grid-template-columns: 1fr, 2fr, 1fr;
 	}
+}
+
+/*
+	instructions - we want them to be read first, so need to be top of herarchy visually
+*/
+#instructions {
+	grid-area: instructions;
+	@include top-bottom-padding(1rem);
+	font-size: $big-text;
+}
+
+/*
+	select dropdown - making it prettier than the default
+	https://www.filamentgroup.com/lab/select-css.html
+*/
+#options {
+	grid-area: options;
+}
+
+#select-shapes {
+	padding: 0.2rem;
+	padding-right: 1.6rem; //make sure there's space for the dropdown arrow
+	@include set-text; //for some reason it doesn't pick up the font from the body
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	border: 1px solid $primary-colour;
+	border-radius: .2em;
+	background-color: $background-colour;
+	background: url('chevron-down-outline.svg');
+	background-size: 1.5rem 1.5rem;
+	background-position: right center;
+	background-repeat: no-repeat;
+	appearance: none; //hides native dropdown arrow so we don't get both
+}
+
+//So it hides the dropdown arrow in IE
+#select-shapes::-ms-expand {
+	display: none;
+}
+
+/*
+	the shape itself
+*/
+#container {
+	grid-area: container;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px; // biggest shape when 3 times the size
+	min-width: 300px; // biggest shape when 3 times the size
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.shape {
+	position: relative;
+	visibility: hidden;
+	stroke: none;
+	fill: $standout-colour;
+}
+
+.helpersvg {
+	display: none;
+	position: absolute;
+}
+
+.helper {
+	visibility: hidden;
+	fill: $primary-colour;
+}
+
+/*
+	result text and reset button
+*/
+#result {
+	grid-area: result;
+	@include top-bottom-padding(1rem);
+	font-weight: bold;
+}
+
+#resetbutton {
+	grid-area: reset;
+	@include top-bottom-padding(1rem);
+}
+
+#reset {
+	@include button;
+	padding: 0.5em 1.5em;
+	font-size: $small-text;
+	color: $background-colour;
+	background-color: $secondary-colour;
+	border: $secondary-colour;
+	visibility: hidden; //hide reset button until transition has finished
+
+	&:hover, &:active {
+		background-color: darken($secondary-colour, 10%);	
+	}
+
+	&:active {
+		top: 2px;
+	}
+}
+
+/*
+	high scores
+*/
+#scores {
+	padding-top: 0.5rem;
+}
+
+#highscores {
+	grid-area: highscores;
+	display: flex;
+	flex-direction: column;;
+	align-items: center;
+	@include top-bottom-padding(1rem);
+	color: $secondary-colour;
+	text-align: left;
+
+	@media (min-width: $breakpoint-medium) {
+		align-self: center;
+	}
+}
+
+.highscore {
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+}
+
+.highscoreicon {
+	padding-right: 0.2rem;
+	fill: $secondary-colour;
+}
+
+#clearbutton {
+	padding-top: 0.5rem;
+}
+
+#clear {
+	@include button;
+	padding: 0.5em 1em;
+	font-size: $smaller-text;
+	color: $primary-colour;
+	background-color: $background-colour;
+	border: $background-colour;
+
+	&:hover, &:active {
+		background-color: darken($background-colour, 10%);
+	}
+
+	&:active {
+		top: 2px;
+	}
+}
+
+#clear:disabled {
+	cursor: auto;
+	pointer-events: none;
+	opacity: 0.5;
 }
