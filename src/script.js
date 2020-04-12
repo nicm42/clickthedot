@@ -89,8 +89,10 @@ function addHighScore(shape, score) {
 }
 
 function clearScores() {
-	localStorage.clear();
-	$('.score').html('');
+	if (confirm("Are you sure you want to clear the closest scores?")) {
+		localStorage.clear();
+		$('.score').html('');		
+	}
 }
 
 //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
