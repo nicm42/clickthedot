@@ -23,6 +23,8 @@ function clickthedot() {
 		$('.shape').css('visibility','hidden');
 	  $('#'+$(this).val()).css('visibility','visible');
   	$('.instructions-shape').text($(this).val());
+  	$('#shape-title').text($(this).val());
+  	$('#helper-title').text('Helper ' + $(this).val());
   	$('.instructions-select').css('visibility','hidden');
 		createShape($(this).val());
 	});
@@ -42,8 +44,7 @@ function createShape(shape) {
 	//Hide all the helpers in case they were previously visible
 	$('.helper-svg').css('display','none');
 	$('.helper').css('visibility','hidden');
-	$('.reset').css('visibility','hidden');	
-  var size = getRandomIntInclusive(50, 100);
+	$('.reset').css('visibility','hidden');	  var size = getRandomIntInclusive(50, 100);
   //Make both the shape and the helper this size
  	$('.shape-svg').css('width',size);
  	$('.shape-svg').css('height',size);

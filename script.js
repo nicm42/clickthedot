@@ -27,6 +27,8 @@ function clickthedot() {
     $('.shape').css('visibility', 'hidden');
     $('#' + $(this).val()).css('visibility', 'visible');
     $('.instructions-shape').text($(this).val());
+    $('#shape-title').text($(this).val());
+    $('#helper-title').text('Helper ' + $(this).val());
     $('.instructions-select').css('visibility', 'hidden');
     createShape($(this).val());
   });

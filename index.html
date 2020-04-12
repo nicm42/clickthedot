@@ -10,20 +10,24 @@
 <body>
 	<div class="instructions"><span class="instructions-select">Select a shape.</span><br>Click the <span class="instructions-shape">shape</span>.<br>Click it again when it's twice the size.</div>
 	<div class="select-shape-container">
-		<select name="select-shape" class="select-shape">
-			<option disabled selected value>Select a shape</option>
+		<select name="select-shape" class="select-shape" aria-label="Select a shape">
+			<option disabled selected value aria-hidden="true">Select a shape</option>
 			<option value="circle">Circle</option>
 			<option value="square">Square</option>
 			<option value="triangle">Triangle</option>
 		</select>
 	</div>
 	<div class="shape-container">
-		<svg class="shape-svg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+		<svg class="shape-svg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="shape-title" aria-describedby="shape-desc" tabindex="0">
+			<title id="shape-title">Shape</title>
+			<desc id="shape-desc">A shape that grows when you click on it</desc>
 			<circle class="shape" id="circle" cx="50%" cy="50%" r="50%"/>
 			<rect class="shape" id="square" x="0" y="0" width="100%" height="100%"/>
 			<polygon class="shape" id="triangle" points="50, 0, 100, 100, 0, 100"/>
 		</svg>
-		<svg class="helper-svg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+		<svg class="helper-svg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="helper-title" aria-describedby="helper-desc">
+			<title id="helper-title">Helper shape</title>
+			<desc id="helper-desc">The original size of the shape to show you how close you got to twice the size</desc>
 			<circle class="helper" id="helper-circle" cx="50%" cy="50%" r="50%"/>
 			<rect class="helper" id="helper-square" x="0" y="0" width="100%" height="100%"/>
 			<polygon class="helper" id="helper-triangle" points="50, 0, 100, 100, 0, 100"/>
@@ -37,19 +41,25 @@
 	<div class="highscores-container">Closest scores
 		<div class="highscores">
 			<div class="highscore">
-				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="highscore-circle-title"  aria-describedby="highscore-circle-desc">
+					<title id="highscore-circle-title">Circle icon</title>
+					<desc id="highscore-circle-desc">Icon for the score for the circle</desc>
 					<circle cx="50%" cy="50%" r="50%"/>
 				</svg>
 				<span class="score" id="score-circle">4.0</span>
 			</div>
 			<div class="highscore">
-				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="highscore-square-title" aria-describedby="highscore-sqaure-desc">
+					<title id="highscore-square-title">Square icon</title>
+					<desc id="highscore-square-desc">Icon for the score for the square</desc>
 					<rect x="0" y="0" width="100%" height="100%"/>
 				</svg>
 				<span class="score" id="score-square">4.0</span>
 			</div>
 			<div class="highscore">
-				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="highscore-triangle-title" aria-describedby="highscore-triangle-desc">
+					<title id="highscore-triangle-title">Triangle icon</title>
+					<desc id="highscore-triangle-desc">Icon for the score for the triangle</desc>
 					<polygon points="50, 0, 100, 100, 0, 100"/>
 				</svg>
 				<span class="score" id="score-triangle">4.0</span>
