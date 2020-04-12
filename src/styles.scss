@@ -111,6 +111,9 @@ body {
 	top: 2px;
 }
 
+#scores {
+	padding-top: .5rem;
+}
 #highscores {
 	grid-area: highscores;
 	padding-top: 10px;
@@ -121,10 +124,34 @@ body {
 	align-items: center;
 	text-align: left;
 }
-ion-icon {
+.highscore {
+	padding-top: .2rem;
+	padding-bottom: .2rem;
+}
+.highscoreicon {
+	padding-right: .2rem;
+	fill: $lightBlue;
+}
+#clearbutton {
+	padding-top: .5rem;
+}
+#clear {
+	cursor: pointer;
+	background-color: $lightGrey;
+	border: $lightGrey;
+	color: $darkBlue;
+	padding: 0.5em 1em;
+	box-shadow: 0 5px 12px -5px rgba(0,0,0,.5);
+	border-radius: .2em;
+	font-size: 0.8rem;
 	position: relative;
-	top: .2rem;
-	padding-right: .2rem
+}
+#clear:hover {
+	background-color: darken($lightGrey, 10%);
+}
+#clear:active {
+	background-color: darken($lightGrey, 10%);
+	top: 2px;
 }
 
 @media (min-width: 600px) {

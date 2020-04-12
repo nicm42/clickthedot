@@ -14,6 +14,7 @@ function clickthedot() {
     createShape($(this).val());
   });
   $('#reset').click(createShape);
+  $('#clear').click(clearScores);
 }
 
 function setupHighScoreText(shape) {
@@ -93,6 +94,11 @@ function addHighScore(shape, score) {
 
   localStorage.setItem(shape, highestScore);
   $('#' + shape + 'score').html(localStorage.getItem(shape));
+}
+
+function clearScores() {
+  localStorage.clear();
+  $('.score').html('');
 } //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 
