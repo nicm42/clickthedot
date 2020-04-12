@@ -23,6 +23,7 @@ function clickthedot() {
     $('.shape').css('visibility', 'hidden');
     $('#' + $(this).val()).css('visibility', 'visible');
     $('#shapename').text($(this).val());
+    $('#selectshape').css('visibility', 'hidden');
     createShape($(this).val());
   });
   $('#reset').click(createShape);
