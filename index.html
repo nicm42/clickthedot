@@ -2,59 +2,61 @@
 <html lang="en">
 <head>
 	<title>Click the Shape</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="styles.css">
-	<link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sunflower:300">
 </head>
 <body>
-	<div id="instructions"><span id="selectshape">Select a shape.</span><br>Click the <span id="shapename">shape</span>.<br>Click it again when it's twice the size.</div>
-	<div id="options">
-		<select name="select-shapes" id="select-shapes">
+	<div class="instructions"><span class="instructions-select">Select a shape.</span><br>Click the <span class="instructions-shape">shape</span>.<br>Click it again when it's twice the size.</div>
+	<div class="select-shape-container">
+		<select name="select-shape" class="select-shape">
 			<option disabled selected value>Select a shape</option>
 			<option value="circle">Circle</option>
 			<option value="square">Square</option>
 			<option value="triangle">Triangle</option>
 		</select>
 	</div>
-	<div id="container">
-		<svg class="svg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+	<div class="shape-container">
+		<svg class="shape-svg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 			<circle class="shape" id="circle" cx="50%" cy="50%" r="50%"/>
 			<rect class="shape" id="square" x="0" y="0" width="100%" height="100%"/>
 			<polygon class="shape" id="triangle" points="50, 0, 100, 100, 0, 100"/>
 		</svg>
-		<svg class="helpersvg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-			<circle class="helper" id="helpercircle" cx="50%" cy="50%" r="50%"/>
-			<rect class="helper" id="helpersquare" x="0" y="0" width="100%" height="100%"/>
-			<polygon class="helper" id="helpertriangle" points="50, 0, 100, 100, 0, 100"/>
+		<svg class="helper-svg" width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			<circle class="helper" id="helper-circle" cx="50%" cy="50%" r="50%"/>
+			<rect class="helper" id="helper-square" x="0" y="0" width="100%" height="100%"/>
+			<polygon class="helper" id="helper-triangle" points="50, 0, 100, 100, 0, 100"/>
 		</svg>
 	</div>
-	<div id="result"></div>
-	<div id="resetbutton">
-		<button class="button" id="reset">Try again</button>
+	<div class="result"><span class="result-text"></span>
+		<div class=reset-container>
+			<button class="reset">Try again</button>
+		</div>
 	</div>
-	<div id="highscores">Closest scores
-		<div id="scores">
-			<div class="highscore" id="circlescoretext">
-				<svg class="highscoreicon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+	<div class="highscores-container">Closest scores
+		<div class="highscores">
+			<div class="highscore">
+				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 					<circle cx="50%" cy="50%" r="50%"/>
 				</svg>
-				<span class="score" id="circlescore"></span>
+				<span class="score" id="score-circle"></span>
 			</div>
-			<div class="highscore" id="squarescoretext">
-				<svg class="highscoreicon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			<div class="highscore">
+				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 					<rect x="0" y="0" width="100%" height="100%"/>
 				</svg>
-				<span class="score" id="squarescore"></span>
+				<span class="score" id="score-square"></span>
 			</div>
-			<div class="highscore" id="trianglescoretext">
-				<svg class="highscoreicon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			<div class="highscore">
+				<svg class="highscore-icon" width="1em" height="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 					<polygon points="50, 0, 100, 100, 0, 100"/>
 				</svg>
-				<span class="score" id="trianglescore"></span>
+				<span class="score" id="score-triangle"></span>
 			</div>
 		</div>
-		<div id="clearbutton">
-			<button class="button" id="clear">Clear scores</button>
+		<div id="clear-container">
+			<button class="clear">Clear scores</button>
 		</div>
 	</div>
 

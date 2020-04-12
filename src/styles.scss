@@ -62,8 +62,7 @@ body {
 											"instructions instructions"
 											"options container"
 											"highscores container"
-											"result result"
-											"reset reset";
+											"result result";
 		grid-template-columns: 1fr, 2fr;
 	}
 
@@ -71,8 +70,7 @@ body {
 		grid-template-areas:
 											". instructions ."
 											"options container highscores"
-											". result ."
-											". reset .";
+											". result .";
 		grid-template-columns: 1fr, 2fr, 1fr;
 	}
 }
@@ -80,7 +78,7 @@ body {
 /*
 	instructions - we want them to be read first, so need to be top of herarchy visually
 */
-#instructions {
+.instructions {
 	grid-area: instructions;
 	@include top-bottom-padding(1rem);
 	font-size: $big-text;
@@ -90,11 +88,11 @@ body {
 	select dropdown - making it prettier than the default
 	https://www.filamentgroup.com/lab/select-css.html
 */
-#options {
+.select-shape-container {
 	grid-area: options;
 }
 
-#select-shapes {
+.select-shape {
 	padding: 0.2rem;
 	padding-right: 1.6rem; //make sure there's space for the dropdown arrow
 	@include set-text; //for some reason it doesn't pick up the font from the body
@@ -110,14 +108,14 @@ body {
 }
 
 //So it hides the dropdown arrow in IE
-#select-shapes::-ms-expand {
+.select-shape::-ms-expand {
 	display: none;
 }
 
 /*
 	the shape itself
 */
-#container {
+.shape-container {
 	grid-area: container;
 	display: flex;
 	justify-content: center;
@@ -137,31 +135,32 @@ body {
 	fill: $standout-colour;
 }
 
-.helpersvg {
-	display: none;
+.helper-svg {
+	display: none; //hiding this here so we can click on the shape without the helper getting in the way 
 	position: absolute;
 }
 
 .helper {
-	visibility: hidden;
+	visibility: hidden; //and then we have to hide this so we an unhide just the relevant one
 	fill: $primary-colour;
 }
 
 /*
 	result text and reset button
 */
-#result {
+.result {
 	grid-area: result;
+	display: flex;
+	flex-direction: column;
 	@include top-bottom-padding(1rem);
 	font-weight: bold;
 }
 
-#resetbutton {
-	grid-area: reset;
+.reset-container {
 	@include top-bottom-padding(1rem);
 }
 
-#reset {
+.reset {
 	@include button;
 	padding: 0.5em 1.5em;
 	font-size: $small-text;
@@ -182,11 +181,7 @@ body {
 /*
 	high scores
 */
-#scores {
-	padding-top: 0.5rem;
-}
-
-#highscores {
+.highscores-container {
 	grid-area: highscores;
 	display: flex;
 	flex-direction: column;;
@@ -205,16 +200,16 @@ body {
 	padding-bottom: 0.2rem;
 }
 
-.highscoreicon {
+.highscore-icon {
 	padding-right: 0.2rem;
 	fill: $secondary-colour;
 }
 
-#clearbutton {
+.clear-container {
 	padding-top: 0.5rem;
 }
 
-#clear {
+.clear {
 	@include button;
 	padding: 0.5em 1em;
 	font-size: $smaller-text;
@@ -229,10 +224,10 @@ body {
 	&:active {
 		top: 2px;
 	}
-}
 
-#clear:disabled {
-	cursor: auto;
-	pointer-events: none;
-	opacity: 0.5;
+	&:disabled {
+		cursor: auto;
+		pointer-events: none;
+		opacity: 0.5;		
+	}
 }
