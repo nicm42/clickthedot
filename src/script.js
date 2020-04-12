@@ -3,6 +3,16 @@ function clickthedot() {
 	setupHighScoreText('circle');
 	setupHighScoreText('square');
 	setupHighScoreText('triangle');
+	//Check if there are no high scores and disable the button if there aren't any
+	var savedScores = 0;
+	$('.score').each(function() {
+		if($(this).html() !== '') {
+			savedScores++;
+		}
+	})
+	if(savedScores === 0) {
+		$('#clear').prop('disabled', true);
+	}
 	$('#select-shapes').val('');
 	$('#select-shapes').change(function() {
 		//Hide all the other shapes first, in case they were previously visible
@@ -84,6 +94,7 @@ function addHighScore(shape, score) {
 	} else {
 		var highestScore = score;
 	}
+	$('#clear').prop('disabled', false);
 	localStorage.setItem(shape, highestScore);
 	$('#'+shape+'score').html(localStorage.getItem(shape));
 }
@@ -91,7 +102,8 @@ function addHighScore(shape, score) {
 function clearScores() {
 	if (confirm("Are you sure you want to clear the closest scores?")) {
 		localStorage.clear();
-		$('.score').html('');		
+		$('.score').html('');
+		$('#clear').prop('disabled', true);
 	}
 }
 
