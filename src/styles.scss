@@ -205,6 +205,10 @@ body {
 	fill: $secondary-colour;
 }
 
+.score {
+	visibility: hidden; //we've put dummy numbers in here so they line up, but need to hide them to start with
+}
+
 .clear-container {
 	padding-top: 0.5rem;
 }

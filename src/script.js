@@ -3,10 +3,15 @@ function clickthedot() {
 	setupHighScoreText('square');
 	setupHighScoreText('triangle');
 	//Check if there are no high scores and disable the button if there aren't any
+	//4.0 is our dummy score
+	//And if there are, we can make .scores visible
 	var savedScores = 0;
 	$('.score').each(function() {
-		if($(this).html() !== '') {
+		if($(this).html() !== '4.0') {
 			savedScores++;
+			$(this).css('visibility','visible');
+		} else {
+			$(this).css('visibility','hidden');
 		}
 	})
 	if(savedScores === 0) {
@@ -97,12 +102,14 @@ function addHighScore(shape, score) {
 	$('.clear').prop('disabled', false);
 	localStorage.setItem(shape, highestScore);
 	$('#score-'+shape).html(localStorage.getItem(shape));
+	$('#score-'+shape).css('visibility', 'visible');
 }
 
 function clearScores() {
 	if (confirm("Are you sure you want to clear the closest scores?")) {
 		localStorage.clear();
-		$('.score').html('');
+		$('.score').html('4.0');
+		$('.score').css('visibility','hidden');
 		$('.clear').prop('disabled', true);
 	}
 }
