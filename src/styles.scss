@@ -112,6 +112,11 @@ body {
 	display: none;
 }
 
+//To make sure it's not so massive in Firefox that the dropdown is wider than the select
+option {
+	font-size: $small-text;
+}
+
 /*
 	the shape itself
 */
