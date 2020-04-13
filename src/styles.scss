@@ -122,6 +122,7 @@ option {
 */
 .shape-container {
 	grid-area: container;
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -134,7 +135,6 @@ option {
 }
 
 .shape {
-	position: relative;
 	visibility: hidden;
 	stroke: none;
 	fill: $standout-colour;
@@ -143,6 +143,11 @@ option {
 .helper-svg {
 	display: none; //hiding this here so we can click on the shape without the helper getting in the way 
 	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
 }
 
 .helper {
