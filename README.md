@@ -1,5 +1,5 @@
-# Click the Dot
+# Click the Shape
 
-This game shows you a black circle and asks you click on it when you think it's twice the size. It's definitely possible to get it spot-on!
+This game shows you a shape (circle, square or triangle) and asks you click on it when you think it's twice the size.
 
-I created this to test using the DOM in Javascript to create HTML elements and add CSS. It's similar to jQuery (which I know) but different enough that knowing jQuery isn't that helpful. I did understand more about how to do it than just reading it, and playing about with the console log.
+The original was Click the Dot, which I created to learn more about DOM manipulation in Javascript. THis version has new features and looks a bit prettier. I also re-wrote the js in jQuery and the css in SCSS.
