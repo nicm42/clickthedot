@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"con",
+				"container"
+			],
+			[
+				"in",
+				"initialSize"
+			],
+			[
+				"tra",
+				"transitionTime"
+			],
+			[
+				"tr",
+				"transitionTime"
+			],
+			[
+				"trans",
+				"transition-duration"
+			],
+			[
+				"transitio",
+				"transition-property"
+			],
+			[
 				"reset",
 				"resetButton"
 			],
@@ -18,14 +42,6 @@
 			[
 				"widh",
 				"widthNumber"
-			],
-			[
-				"tra",
-				"transition"
-			],
-			[
-				"trans",
-				"transition"
 			],
 			[
 				"resul",
@@ -278,10 +294,6 @@
 			[
 				"cons",
 				"const\tkeyword"
-			],
-			[
-				"in",
-				"input\tTag"
 			]
 		]
 	},
@@ -291,7 +303,7 @@
 			"file": "clickthedot.html",
 			"settings":
 			{
-				"buffer_size": 489,
+				"buffer_size": 499,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "<html>"
@@ -301,7 +313,7 @@
 			"file": "clickthedot.css",
 			"settings":
 			{
-				"buffer_size": 656,
+				"buffer_size": 943,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "body{"
@@ -311,7 +323,7 @@
 			"file": "clickthedot.js",
 			"settings":
 			{
-				"buffer_size": 3007,
+				"buffer_size": 3871,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "//js file"
@@ -410,7 +422,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -424,6 +436,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cursor",
+			"stopdot",
+			"eventlistener",
+			"transitio",
 			"widthwhen",
 			"gradient",
 			"span"
@@ -454,15 +470,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 489,
+						"buffer_size": 499,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								337,
-								337
+								260,
+								260
 							]
 						],
 						"settings":
@@ -489,15 +505,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 656,
+						"buffer_size": 943,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								572,
-								572
+								0,
+								0
 							]
 						],
 						"settings":
@@ -506,7 +522,7 @@
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 21.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -518,15 +534,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3007,
+						"buffer_size": 3871,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8,
-								8
+								0,
+								0
 							]
 						],
 						"settings":
