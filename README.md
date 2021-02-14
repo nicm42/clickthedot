@@ -37,7 +37,7 @@ To view this project visit the [demo](https://click-the-shape.netlify.com/) or d
 * High score
 
 ## Status
-Project is: _in progress_ because there are always new projects to update
+Project is: _finished_
 
 ## Inspiration
 Confetti is copied from https://www.codeseek.co/moonglows76/css-confetti-BRVrgZ
