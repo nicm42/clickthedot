@@ -30,7 +30,7 @@ The original was Click the Dot, where you clicked on a circle when it was twice 
 * SVG animation in jQuery
 
 ## Setup
-To view this project visit the [demo](https://click-the-shape.nicm42.co.uk/) or download the files and open index.html
+To view this project download the files and open index.html
 
 ## Features
 * Scoring
